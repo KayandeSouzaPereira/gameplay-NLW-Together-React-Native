@@ -14,7 +14,8 @@ import { TextArea } from '../../components/TextArea'
 import { Button } from '../../components/Button'
 import { ModalView } from '../../components/ModalView'
 import { Guilds } from '../Guilds'
-import { GuildProps } from '../../components/Appointment'
+import { GuildProps } from '../../components/Guild'
+import { Background } from '../../components/Background'
 
 
 
@@ -34,13 +35,22 @@ export function AppointmentCreate() {
         setOpenGuildsModal(false);
     }
 
+    function handleCloseGuilds(){
+        setOpenGuildsModal(false);
+    }
+
+    function handleCategorySelect(categoryId: string){
+        setCategory(categoryId);
+    }
+
     return (
         <KeyboardAvoidingView 
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}
         >
+            <Background>
                 <ScrollView>
-                        <Header
+                    <Header
                             title="Agendar Partida"
                         />
                     <Text style={[
@@ -48,14 +58,14 @@ export function AppointmentCreate() {
                         { marginLeft: 24, marginTop: 36, marginBottom: 18}]}
                         >
                         Categoria
-                        </Text> 
-                        <CategorySelect
+                    </Text> 
+                    <CategorySelect
                             hasCheckBox
-                            setCategory={setCategory}
+                            setCategory={handleCategorySelect}
                             categorySelected={category}
-                        />
+                    />
 
-                        <View style={styles.form}>
+                    <View style={styles.form}>
                             <RectButton onPress={handleOpenGuilds}>
                                 <View style={styles.select}> 
                                     {guild.icon 
@@ -80,7 +90,7 @@ export function AppointmentCreate() {
                             </RectButton>
                             <View style={styles.field}>
                                 <View>
-                                    <Text style={styles.label}>
+                                    <Text style={[styles.label, { marginBottom: 12}]}>
                                         Dia e Mês
                                     </Text>
                                     <View style={styles.column}>
@@ -92,7 +102,7 @@ export function AppointmentCreate() {
                                     </View>
                                 </View>
                                 <View>
-                                    <Text style={styles.label}>
+                                    <Text style={[styles.label, { marginBottom: 12}]}>
                                         Hora e Minuto
                                     </Text>
                                     <View style={styles.column}>
@@ -124,8 +134,9 @@ export function AppointmentCreate() {
                                     title="Agendar"
                                 />
                             </View>  
-                </ScrollView>
-                   <ModalView visible={openGuildsModal}>
+                    </ScrollView>
+                </Background>
+                   <ModalView visible={openGuildsModal} closeModal={handleCloseGuilds}>
                         <Guilds handleGuildSelect={handleGuildSelect} />
                    </ModalView>
         </KeyboardAvoidingView>

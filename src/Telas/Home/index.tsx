@@ -40,6 +40,54 @@ export function Home() {
             category: '1',
             date: '22/06 as 20:40h',
             description: 'É hoje que vamos chegar ao challenger sem perder uma partida na md10'
+        },
+        {
+            id:'3',
+            guild:{
+                id: '1',
+                name: 'Lendários',
+                icon: null,
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20:40h',
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida na md10'
+        },
+        {
+            id:'4',
+            guild:{
+                id: '1',
+                name: 'Lendários',
+                icon: null,
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20:40h',
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida na md10'
+        },
+        {
+            id:'5',
+            guild:{
+                id: '1',
+                name: 'Lendários',
+                icon: null,
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20:40h',
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida na md10'
+        },
+        {
+            id:'6',
+            guild:{
+                id: '1',
+                name: 'Lendários',
+                icon: null,
+                owner: true,
+            },
+            category: '1',
+            date: '22/06 as 20:40h',
+            description: 'É hoje que vamos chegar ao challenger sem perder uma partida na md10'
         }
 ]
 
@@ -56,7 +104,6 @@ export function Home() {
 
     return (
     <Background>  
-            <View >
                 <View style={styles.header}>
                     <Profile/>
                     <ButtonAdd onPress={handleAppointmentCreate}/>
@@ -68,30 +115,24 @@ export function Home() {
                     setCategory={handleCategorySelect}
                     />
                 </View>
-
-                <View style={styles.content}>
                     <ListHeader
                     title="Partidas Agendadas"
                     subtitle="total 6"
                     />
-
-                    <FlatList 
+            <FlatList 
                         data={appoinments}
                         keyExtractor={item => item.id}
                         renderItem={({ item }) => (
                             <Appointment 
                                 data={item} 
                                 onPress={handleAppointmentDetails}
-                                />
+                            />
                         )}
                         ItemSeparatorComponent={() => <ListDivider />}
                         style={styles.matches}
+                        contentContainerStyle={{ paddingBottom: 69}}
                         showsVerticalScrollIndicator={false}
                     />
-
-                </View>
-
-            </View>
         </Background>                
     );
 }
