@@ -46,3 +46,6 @@ Lembre-se de adicionar as varíaveis de ambiente ".env" utilizando o modelo ".en
 - Expo Authentication
 - React Native Share
 - Deep Link
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
