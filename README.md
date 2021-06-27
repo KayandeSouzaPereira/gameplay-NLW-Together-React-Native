@@ -10,9 +10,9 @@ Veja e entre em seu servidor do Discord no momento de suas Partidas.
 
 ## Instalação 
 
-Instale o [Expo}(https://docs.expo.io/) em sua maquina e rode o comando:
+Instale o [Expo](https://docs.expo.io/) em sua maquina e rode o comando:
 
-´´´Bash
+```Bash
 expo start
-´´´
+```
 Lembre-se de adicionar as varíaveis de ambiente ".env" utilizando o modelo ".env.example" com as credencias de [acesso](https://discord.com/developers/applications)
